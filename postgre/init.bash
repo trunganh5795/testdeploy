@@ -1,0 +1,1 @@
+pg_restore -U postgres -d bkshop -1 backup.sql

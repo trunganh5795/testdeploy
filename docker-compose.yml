@@ -1,0 +1,24 @@
+version: '1'
+services:
+  db:
+    container_name: PostgresCont
+    build: ./postgre
+    restart: always
+    volumes:
+      - ./postgre/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=161200
+    ports:
+      - '5432:5432'
+  server:
+    container_name: server
+    build: ./server
+    volumes:
+      - ./server:/usr/src/
+      - /usr/src/node_modules
+    ports:
+      - '8000:8000'
+# volumes:
+#   data:
+#     driver: local

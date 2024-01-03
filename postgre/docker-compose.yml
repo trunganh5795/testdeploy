@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db:
+    container_name: PostgresCont
+    build: .
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=161200
+    ports:
+      - '5432:5432'
+  server:
+
+volumes:
+  data:
+    driver: local
