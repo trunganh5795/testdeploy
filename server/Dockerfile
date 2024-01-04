@@ -9,5 +9,5 @@ RUN npm i -g npm@9.4.0
 RUN npm install 
 RUN npm install pm2@3.5.0 -g
 CMD pm2 start process.yml && tail -f /dev/null
-# EXPOSE 3000
+EXPOSE 8000
 
